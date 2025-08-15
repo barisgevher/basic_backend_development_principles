@@ -31,7 +31,7 @@ namespace ProductAPI.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(ApiResponse<IEnumerable<ProductResponseDto>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<ApiResponse<IEnumerable<ProductResponseDto>>>> GetAllProducts()
+        public async Task<ActionResult> GetAllProducts()
         {
             _logger.LogInformation("GET /api/products - Getting all products");
 

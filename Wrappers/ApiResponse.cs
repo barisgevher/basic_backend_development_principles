@@ -1,6 +1,6 @@
 ﻿namespace ProductAPI.Wrappers
 {
-    // API Response Wrapper
+    
     public class ApiResponse<T>
     {
         public bool Success { get; set; }

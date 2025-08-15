@@ -28,7 +28,7 @@ namespace ProductAPI.Repositories
         {
             var query = _context.Products.AsQueryable();
 
-            // Apply filters
+            
             if (parameters.IsActive.HasValue)
             {
                 query = query.Where(p => p.IsActive == parameters.IsActive.Value);
@@ -65,13 +65,13 @@ namespace ProductAPI.Repositories
                 query = query.Where(p => p.Price <= parameters.MaxPrice.Value);
             }
 
-            // Get total count before pagination
+           
             var totalCount = await query.CountAsync();
 
-            // Apply sorting
+            
             query = ApplySorting(query, parameters.SortBy, parameters.SortOrder);
 
-            // Apply pagination
+            
             var items = await query
                 .Skip((parameters.PageNumber - 1) * parameters.PageSize)
                 .Take(parameters.PageSize)
@@ -134,7 +134,7 @@ namespace ProductAPI.Repositories
             if (existingProduct == null)
                 return null;
 
-            // Update properties
+           
             existingProduct.Name = product.Name;
             existingProduct.Description = product.Description;
             existingProduct.Price = product.Price;
@@ -155,11 +155,12 @@ namespace ProductAPI.Repositories
             if (product == null)
                 return false;
 
-            // Soft delete - just mark as inactive
+           
+            // soft delete
             product.IsActive = false;
             product.UpdatedAt = DateTime.UtcNow;
 
-            // For hard delete, uncomment below:
+            // For hard delete, uncomment 
             // _context.Products.Remove(product);
 
             await _context.SaveChangesAsync();

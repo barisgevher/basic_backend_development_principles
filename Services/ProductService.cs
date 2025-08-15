@@ -171,7 +171,7 @@ namespace ProductAPI.Services
 
                 var updatedProduct = _mapper.Map<Product>(productUpdateDto);
                 updatedProduct.Id = id;
-                updatedProduct.CreatedAt = existingProduct.CreatedAt; // Preserve original creation date
+                updatedProduct.CreatedAt = existingProduct.CreatedAt; 
 
                 var result = await _productRepository.UpdateAsync(updatedProduct);
                 if (result == null)

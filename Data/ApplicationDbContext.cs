@@ -19,13 +19,13 @@
             {
                 base.OnModelCreating(modelBuilder);
 
-                // Product entity configuration
+               
                 modelBuilder.Entity<Product>(entity =>
                 {
-                    // Primary key
+                   
                     entity.HasKey(p => p.Id);
 
-                    // Property configurations
+                   
                     entity.Property(p => p.Name)
                         .IsRequired()
                         .HasMaxLength(200);
@@ -54,12 +54,11 @@
 
                     entity.Property(p => p.CreatedAt)
                         .IsRequired()
-                        .HasDefaultValueSql("GETUTCDATE()"); // SQL Server için
-                                                             // .HasDefaultValueSql("CURRENT_TIMESTAMP"); // PostgreSQL için
+                        .HasDefaultValueSql("GETUTCDATE()"); 
 
                     entity.Property(p => p.UpdatedAt);
 
-                    // Indexes for better performance
+                  
                     entity.HasIndex(p => p.Name)
                         .HasDatabaseName("IX_Products_Name");
 
@@ -75,12 +74,11 @@
                     entity.HasIndex(p => p.CreatedAt)
                         .HasDatabaseName("IX_Products_CreatedAt");
 
-                    // Composite index for common queries
+                   
                     entity.HasIndex(p => new { p.Category, p.IsActive })
                         .HasDatabaseName("IX_Products_Category_IsActive");
                 });
 
-                // Seed data
                 SeedData(modelBuilder);
             }
 
@@ -214,13 +212,13 @@
                         Category = "Seasonal Decor",
                         Brand = "HolidayJoy",
                         ImageUrl = "https://example.com/images/stocking.jpg",
-                        IsActive = false, // Example of an inactive product
+                        IsActive = false, 
                         CreatedAt = DateTime.UtcNow
                     }
                 );
             }
 
-            // Override SaveChanges to automatically set UpdatedAt
+           
             public override int SaveChanges()
             {
                 UpdateTimestamps();
