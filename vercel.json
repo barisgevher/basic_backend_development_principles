@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "ProductAPI/ProductAPI.csproj",
+      "use": "@vercel/csharp"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/ProductAPI"
+    }
+  ]
+}
