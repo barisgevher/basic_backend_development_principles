@@ -1,8 +1,8 @@
-# Kayra Export Case 1 Projesi
+# Basic backend development principles
 
 ## Giriş
 
-Bu proje, temel backend geliştirme prensiplerini, REST API oluşturma ve veritabanı (MSSQL) işlemlerini ölçmek amacıyla ASP.NET Core 8 ve Entity Framework Core kullanılarak geliştirilmiş bir "case study" projesidir.
+Bu proje, temel backend geliştirme prensiplerini, REST API oluşturma ve veritabanı (MSSQL) işlemlerini ölçmek amacıyla ASP.NET Core 8 ve Entity Framework Core kullanılarak geliştirilmiş bir projedir.
 
 ## Kullanılan Teknolojiler
 
