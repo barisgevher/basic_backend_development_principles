@@ -29,8 +29,8 @@ Projenin doğru şekilde çalışabilmesi için aşağıdaki yazılımların sis
 1.  **Depoyu Klonlayın:**
 
     ```bash
-    git clone https://github.com/barisgevher/kayra-export-case1.git
-    cd kayra-export-case1
+    git clone https://github.com/barisgevher/basic_backend_development_principles.git
+    cd basic_backend_development_principles
     ```
 
 2.  **NuGet Paketlerini Geri Yükleyin:**
@@ -47,8 +47,8 @@ Projenin doğru şekilde çalışabilmesi için aşağıdaki yazılımların sis
       ```json
       {
         "ConnectionStrings": {
-          "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=KayraCaseDb;User Id=YOUR_DB_USER;Password=YOUR_DB_PASSWORD;TrustServerCertificate=True"
-          // Örneğin: Server=localhost\\SQLEXPRESS;Database=KayraCaseDb;Trusted_Connection=True;TrustServerCertificate=True
+          "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=CaseDb;User Id=YOUR_DB_USER;Password=YOUR_DB_PASSWORD;TrustServerCertificate=True"
+          // Örneğin: Server=localhost\\SQLEXPRESS;Database=FFCaseDb;Trusted_Connection=True;TrustServerCertificate=True
         }
         // Diğer ayarlar...
       }
@@ -72,7 +72,7 @@ Tüm bağımlılıklar yüklendikten ve veritabanı yapılandırıldıktan sonra
   dotnet run
   ```
 - **Visual Studio ile:**
-  Proje çözümünü (`.sln` uzantılı dosya) Visual Studio'da açın ve "IIS Express" veya projenizin adını seçerek (örneğin "KayraExportCase") uygulamayı başlatın.
+  Proje çözümünü (`.sln` uzantılı dosya) Visual Studio'da açın ve "IIS Express" veya projenizin adını seçerek (örneğin "basic_backend_development_principles") uygulamayı başlatın.
 
 Uygulama başarıyla başlatıldığında, genellikle `http://localhost:5000` veya `http://localhost:7000` (HTTPS) gibi bir adresten erişilebilir olacaktır.
 
